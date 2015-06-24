@@ -1,0 +1,530 @@
+<?xml version="1.0"?>
+
+-<wsdl:definitions targetNamespace="http://src/" name="ShowService" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://src/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+-<wsdl:types>
+
+
+-<xs:schema targetNamespace="http://src/" xmlns:tns="http://src/" elementFormDefault="unqualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="getAllData" type="tns:getAllData"/>
+
+<xs:element name="getAllDataResponse" type="tns:getAllDataResponse"/>
+
+<xs:element name="getData" type="tns:getData"/>
+
+<xs:element name="getData1" type="tns:getData1"/>
+
+<xs:element name="getData1Response" type="tns:getData1Response"/>
+
+<xs:element name="getDataResponse" type="tns:getDataResponse"/>
+
+<xs:element name="retrieveAllProjects" type="tns:retrieveAllProjects"/>
+
+<xs:element name="retrieveAllProjectsResponse" type="tns:retrieveAllProjectsResponse"/>
+
+<xs:element name="retrieveProjects" type="tns:retrieveProjects"/>
+
+<xs:element name="retrieveProjectsResponse" type="tns:retrieveProjectsResponse"/>
+
+
+-<xs:complexType name="retrieveProjects">
+
+
+-<xs:sequence>
+
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="retrieveProjectsResponse">
+
+
+-<xs:sequence>
+
+<xs:element name="return" type="tns:survey" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="survey">
+
+
+-<xs:sequence>
+
+<xs:element name="checkBx" type="xs:string" minOccurs="0"/>
+
+<xs:element name="checkbox" type="xs:string" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+
+<xs:element name="city" type="xs:string" minOccurs="0"/>
+
+<xs:element name="eemail" type="xs:string" minOccurs="0"/>
+
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+
+<xs:element name="ename" type="xs:string" minOccurs="0"/>
+
+<xs:element name="ephone" type="xs:string" minOccurs="0"/>
+
+<xs:element name="firstname" type="xs:string" minOccurs="0"/>
+
+<xs:element name="lastname" type="xs:string" minOccurs="0"/>
+
+<xs:element name="likely" type="xs:string" minOccurs="0"/>
+
+<xs:element name="raffle" type="xs:string" minOccurs="0"/>
+
+<xs:element name="startDate" type="xs:string" minOccurs="0"/>
+
+<xs:element name="streetaddress" type="xs:string" minOccurs="0"/>
+
+<xs:element name="surveydate" type="xs:string" minOccurs="0"/>
+
+<xs:element name="surveyradio" type="xs:string" minOccurs="0"/>
+
+<xs:element name="telephone" type="xs:string" minOccurs="0"/>
+
+<xs:element name="text" type="xs:string" minOccurs="0"/>
+
+<xs:element name="usstate" type="xs:string" minOccurs="0"/>
+
+<xs:element name="zip" type="xs:string" minOccurs="0"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getData1">
+
+
+-<xs:sequence>
+
+<xs:element name="query" type="xs:string" minOccurs="0"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getData1Response">
+
+
+-<xs:sequence>
+
+<xs:element name="return" type="tns:arrayList" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="arrayList">
+
+
+-<xs:complexContent>
+
+
+-<xs:extension base="tns:abstractList">
+
+<xs:sequence/>
+
+</xs:extension>
+
+</xs:complexContent>
+
+</xs:complexType>
+
+
+-<xs:complexType name="abstractList" abstract="true">
+
+
+-<xs:complexContent>
+
+
+-<xs:extension base="tns:abstractCollection">
+
+<xs:sequence/>
+
+</xs:extension>
+
+</xs:complexContent>
+
+</xs:complexType>
+
+
+-<xs:complexType name="abstractCollection" abstract="true">
+
+<xs:sequence/>
+
+</xs:complexType>
+
+
+-<xs:complexType name="retrieveAllProjects">
+
+<xs:sequence/>
+
+</xs:complexType>
+
+
+-<xs:complexType name="retrieveAllProjectsResponse">
+
+
+-<xs:sequence>
+
+<xs:element name="return" type="tns:survey" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getData">
+
+
+-<xs:sequence>
+
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getDataResponse">
+
+
+-<xs:sequence>
+
+<xs:element name="return" type="tns:arrayList" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getAllData">
+
+<xs:sequence/>
+
+</xs:complexType>
+
+
+-<xs:complexType name="getAllDataResponse">
+
+
+-<xs:sequence>
+
+<xs:element name="return" type="tns:arrayList" minOccurs="0" maxOccurs="unbounded"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+<xs:element name="SQLException" type="tns:SQLException"/>
+
+
+-<xs:complexType name="SQLException">
+
+
+-<xs:sequence>
+
+<xs:element name="errorCode" type="xs:int" minOccurs="0"/>
+
+<xs:element name="sQLState" type="xs:string" minOccurs="0"/>
+
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+
+</xs:sequence>
+
+</xs:complexType>
+
+</xs:schema>
+
+</wsdl:types>
+
+
+-<wsdl:message name="getAllDataResponse">
+
+<wsdl:part name="parameters" element="tns:getAllDataResponse"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="retrieveProjectsResponse">
+
+<wsdl:part name="parameters" element="tns:retrieveProjectsResponse"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="retrieveAllProjectsResponse">
+
+<wsdl:part name="parameters" element="tns:retrieveAllProjectsResponse"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="retrieveAllProjects">
+
+<wsdl:part name="parameters" element="tns:retrieveAllProjects"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="getDataResponse">
+
+<wsdl:part name="parameters" element="tns:getDataResponse"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="getData1Response">
+
+<wsdl:part name="parameters" element="tns:getData1Response"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="getData1">
+
+<wsdl:part name="parameters" element="tns:getData1"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="SQLException">
+
+<wsdl:part name="SQLException" element="tns:SQLException"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="getData">
+
+<wsdl:part name="parameters" element="tns:getData"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="getAllData">
+
+<wsdl:part name="parameters" element="tns:getAllData"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:message name="retrieveProjects">
+
+<wsdl:part name="parameters" element="tns:retrieveProjects"> </wsdl:part>
+
+</wsdl:message>
+
+
+-<wsdl:portType name="Show">
+
+
+-<wsdl:operation name="retrieveProjects">
+
+<wsdl:input name="retrieveProjects" message="tns:retrieveProjects"> </wsdl:input>
+
+<wsdl:output name="retrieveProjectsResponse" message="tns:retrieveProjectsResponse"> </wsdl:output>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="getData1">
+
+<wsdl:input name="getData1" message="tns:getData1"> </wsdl:input>
+
+<wsdl:output name="getData1Response" message="tns:getData1Response"> </wsdl:output>
+
+<wsdl:fault name="SQLException" message="tns:SQLException"> </wsdl:fault>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="retrieveAllProjects">
+
+<wsdl:input name="retrieveAllProjects" message="tns:retrieveAllProjects"> </wsdl:input>
+
+<wsdl:output name="retrieveAllProjectsResponse" message="tns:retrieveAllProjectsResponse"> </wsdl:output>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="getData">
+
+<wsdl:input name="getData" message="tns:getData"> </wsdl:input>
+
+<wsdl:output name="getDataResponse" message="tns:getDataResponse"> </wsdl:output>
+
+<wsdl:fault name="SQLException" message="tns:SQLException"> </wsdl:fault>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="getAllData">
+
+<wsdl:input name="getAllData" message="tns:getAllData"> </wsdl:input>
+
+<wsdl:output name="getAllDataResponse" message="tns:getAllDataResponse"> </wsdl:output>
+
+<wsdl:fault name="SQLException" message="tns:SQLException"> </wsdl:fault>
+
+</wsdl:operation>
+
+</wsdl:portType>
+
+
+-<wsdl:binding name="ShowServiceSoapBinding" type="tns:Show">
+
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+
+
+-<wsdl:operation name="getData1">
+
+<soap:operation style="document" soapAction=""/>
+
+
+-<wsdl:input name="getData1">
+
+<soap:body use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output name="getData1Response">
+
+<soap:body use="literal"/>
+
+</wsdl:output>
+
+
+-<wsdl:fault name="SQLException">
+
+<soap:fault name="SQLException" use="literal"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="retrieveProjects">
+
+<soap:operation style="document" soapAction=""/>
+
+
+-<wsdl:input name="retrieveProjects">
+
+<soap:body use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output name="retrieveProjectsResponse">
+
+<soap:body use="literal"/>
+
+</wsdl:output>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="retrieveAllProjects">
+
+<soap:operation style="document" soapAction=""/>
+
+
+-<wsdl:input name="retrieveAllProjects">
+
+<soap:body use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output name="retrieveAllProjectsResponse">
+
+<soap:body use="literal"/>
+
+</wsdl:output>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="getData">
+
+<soap:operation style="document" soapAction=""/>
+
+
+-<wsdl:input name="getData">
+
+<soap:body use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output name="getDataResponse">
+
+<soap:body use="literal"/>
+
+</wsdl:output>
+
+
+-<wsdl:fault name="SQLException">
+
+<soap:fault name="SQLException" use="literal"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+
+-<wsdl:operation name="getAllData">
+
+<soap:operation style="document" soapAction=""/>
+
+
+-<wsdl:input name="getAllData">
+
+<soap:body use="literal"/>
+
+</wsdl:input>
+
+
+-<wsdl:output name="getAllDataResponse">
+
+<soap:body use="literal"/>
+
+</wsdl:output>
+
+
+-<wsdl:fault name="SQLException">
+
+<soap:fault name="SQLException" use="literal"/>
+
+</wsdl:fault>
+
+</wsdl:operation>
+
+</wsdl:binding>
+
+
+-<wsdl:service name="ShowService">
+
+
+-<wsdl:port name="ShowPort" binding="tns:ShowServiceSoapBinding">
+
+<soap:address location="http://localhost:8080/StudentSurvey/Show"/>
+
+</wsdl:port>
+
+</wsdl:service>
+
+</wsdl:definitions>
